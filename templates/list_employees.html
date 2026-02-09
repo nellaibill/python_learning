@@ -1,0 +1,19 @@
+
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% block content %}
+<h1>Employees List</h1>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.position }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

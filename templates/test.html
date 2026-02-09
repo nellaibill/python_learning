@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Interview Master – Complete Notes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    background: #f8fafc;
+    color: #1f2937;
+}
+header {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+header p {
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+details {
+    background: #ffffff;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+summary {
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: #eef2ff;
+    color: #3730a3;
+}
+details[open] summary {
+    background: #4f46e5;
+    color: white;
+}
+.content {
+    padding: 1.2rem;
+}
+
+h3 {
+    color: #16a34a;
+}
+pre {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+th, td {
+    border: 1px solid #e5e7eb;
+    padding: 0.6rem;
+    text-align: center;
+}
+th {
+    background: #e0e7ff;
+}
+.tip {
+    background: #ecfdf5;
+    border-left: 4px solid #22c55e;
+    padding: 0.7rem;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Python Interview Master Notes</h1>
+    <p>Day 1 – Day 10 | Complete • Detailed • Interview Ready</p>
+</header>
+
+<div class="container">
+
+<!-- DAY 1 -->
+<details>
+<summary>Day 1 – Python Basics</summary>
+<div class="content">
+<h3>Python Characteristics</h3>
+<ul>
+<li>Python is dynamically typed</li>
+<li>No need to declare data types</li>
+<li>Indentation defines code blocks</li>
+</ul>
+
+<h3>User Input & Type Conversion</h3>
+<pre>
+age = input("Enter age: ")
+age = int(age)
+</pre>
+
+<h3>Checking Data Types</h3>
+<pre>
+print(type(age))
+</pre>
+
+<div class="tip">Interview Tip: input() always returns string.</div>
+</div>
+</details>
+
+<!-- DAY 2 -->
+<details>
+<summary>Day 2 – Conditions & Decision Making</summary>
+<div class="content">
+<h3>Comparison Operators</h3>
+<pre>
+a == b
+a != b
+a > b
+</pre>
+
+<h3>if / elif / else</h3>
+<pre>
+if age < 13:
+    print("Child")
+elif age < 18:
+    print("Teen")
+else:
+    print("Adult")
+</pre>
+
+<div class="tip">Interview Tip: elif avoids unnecessary checks.</div>
+</div>
+</details>
+
+<!-- DAY 3 -->
+<details>
+<summary>Day 3 – Loops</summary>
+<div class="content">
+<h3>for Loop</h3>
+<pre>
+for i in range(5):
+    print(i)
+</pre>
+
+<h3>while Loop</h3>
+<pre>
+count = 1
+while count <= 5:
+    print(count)
+    count += 1
+</pre>
+
+<h3>break vs continue</h3>
+<table>
+<tr><th>break</th><th>continue</th></tr>
+<tr><td>Exits loop</td><td>Skips iteration</td></tr>
+</table>
+</div>
+</details>
+
+<!-- DAY 4 -->
+<details>
+<summary>Day 4 – Data Structures</summary>
+<div class="content">
+<table>
+<tr>
+<th>Type</th><th>Ordered</th><th>Mutable</th><th>Duplicates</th>
+</tr>
+<tr><td>List</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Tuple</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+<tr><td>Set</td><td>No</td><td>Yes</td><td>No</td></tr>
+<tr><td>Dict</td><td>Yes</td><td>Yes</td><td>Keys No</td></tr>
+</table>
+</div>
+</details>
+
+<!-- DAY 5 -->
+<details>
+<summary>Day 5 – Functions</summary>
+<div class="content">
+<pre>
+def add(a, b):
+    return a + b
+</pre>
+
+<table>
+<tr><th>print</th><th>return</th></tr>
+<tr><td>Displays output</td><td>Sends value back</td></tr>
+</table>
+</div>
+</details>
+
+<!-- DAY 6 -->
+<details>
+<summary>Day 6 – Strings</summary>
+<div class="content">
+<pre>
+name = "saleem"
+print(name[::-1])
+</pre>
+
+<ul>
+<li>Strings are immutable</li>
+<li>f-strings preferred</li>
+</ul>
+</div>
+</details>
+
+<!-- DAY 7 -->
+<details>
+<summary>Day 7 – Exception Handling</summary>
+<div class="content">
+<pre>
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Error")
+finally:
+    print("Always runs")
+</pre>
+</div>
+</details>
+
+<!-- DAY 8 -->
+<details>
+<summary>Day 8 – File Handling</summary>
+<div class="content">
+<table>
+<tr><th>Mode</th><th>Meaning</th></tr>
+<tr><td>r</td><td>Read</td></tr>
+<tr><td>w</td><td>Overwrite</td></tr>
+<tr><td>a</td><td>Append</td></tr>
+</table>
+
+<pre>
+with open("file.txt", "r") as f:
+    print(f.read())
+</pre>
+</div>
+</details>
+
+<!-- DAY 9 -->
+<details>
+<summary>Day 9 – Modules & Packages</summary>
+<div class="content">
+<table>
+<tr><th>Module</th><th>Package</th></tr>
+<tr><td>Single file</td><td>Folder of modules</td></tr>
+</table>
+
+<pre>
+if __name__ == "__main__":
+    main()
+</pre>
+</div>
+</details>
+
+<!-- DAY 10 -->
+<details>
+<summary>Day 10 – OOP Basics</summary>
+<div class="content">
+<table>
+<tr><th>Class</th><th>Object</th></tr>
+<tr><td>Blueprint</td><td>Instance</td></tr>
+</table>
+
+<pre>
+class Person:
+    def __init__(self, name):
+        self.name = name
+</pre>
+</div>
+</details>
+
+</div>
+
+</body>
+</html>
