@@ -48,7 +48,6 @@ def home():
 def logout():
     session.pop('user_id', None)  # Remove user ID from session to log out
     return redirect(url_for('home'))  # Redirect to home page after logout
-if __name__ == '__main__':
-    app.run(debug=True)
+
  
     
