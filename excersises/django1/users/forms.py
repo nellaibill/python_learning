@@ -14,4 +14,9 @@ class ProfileForm(forms.ModelForm):
         if(len(name)<3):
             raise forms.ValidationError("Name must be at least 3 characters long")
         return name
+    
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']    
         

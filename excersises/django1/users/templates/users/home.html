@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    
-    <h1> Add User </h1>
-     <form method = "post">
-        {% csrf_token %}
-       {{form.as_p}}
-    
-    <button type="submit">Add User</button>
+{% extends "users/base.html" %}
+
+{% block content %}
+
+<h3>Add Profile</h3>
+
+<form method="POST" class="card p-4 shadow">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
-    <h1>users list</h1>
-    <ul>
-        {% if users%}
-        {% for user in users%}
-        <li> {{user.name}} - {{user.email}}
-            <a href="{% url 'edit_user' user.id %}"> Edit </a>
-            <a href="{% url 'delete_user' user.id %}"> Delete </a>
-        </li>    
-        {% endfor %}
-        {%else%}
-        <p> No Users available.</p>
-        {%endif%}
-    </ul>
-</body>
-</html>
+
+<hr>
+
+<h3>My Profiles</h3>
+
+<ul>
+    {% for profile in profiles %}
+        <li>{{ profile.name }} - {{ profile.email }}</li>
+    {% empty %}
+        <li>No profiles yet</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
