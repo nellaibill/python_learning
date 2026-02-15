@@ -1,30 +1,21 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import User
-from .forms import UserForm,RegisterForm
+from .models import Profile
+from .forms import ProfileForm
 
-def register(request):
-    if(request.method =="POST"):
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("home")
-        else:
-            form =RegisterForm()
-            
-    return render(request,"users/register.html",{"form":form})        
+     
 
 def home(request):
     if request.method == "POST":
-        form = UserForm(request.POST)
+        form = ProfileForm(request.POST)
         
         if form.is_valid():
             form.save()
             return redirect("home")
         
     else:
-            form = UserForm()
+            form = ProfileForm()
             
-    users = User.objects.all()
+    users = Profile.objects.all()
 
     return render(request,"users/home.html",{"form": form,"users": users})
 
